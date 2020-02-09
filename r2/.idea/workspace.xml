@@ -81,10 +81,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="291" y="118" key="#xdebugger.evaluate/0.0.1920.1080@0.0.1920.1080" timestamp="1581260556389" />
-    <state x="386" y="0" width="1138" height="1080" key="CommitChangelistDialog2" timestamp="1581267378008">
+    <state x="386" y="0" width="1138" height="1080" key="CommitChangelistDialog2" timestamp="1581267427971">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="386" y="0" width="1138" height="1080" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1581267378008" />
+    <state x="386" y="0" width="1138" height="1080" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1581267427971" />
     <state x="635" y="186" width="630" height="708" key="FileChooserDialogImpl" timestamp="1581192989326">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -125,5 +125,9 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="217" y="0" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1581192955247" />
+    <state x="355" y="150" width="1200" height="778" key="Vcs.Push.Dialog.v2" timestamp="1581267477279">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="355" y="150" width="1200" height="778" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1581267477279" />
   </component>
 </project>
