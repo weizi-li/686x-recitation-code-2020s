@@ -14,7 +14,7 @@ def compute_prediction(X, coef, intercept):
     return result
 
 
-def compute_accuracy1(pred, actual):
+def compute_accuracy(pred, actual):
     agreement = (pred == actual)
     accuracy = np.sum(agreement) / pred.shape[0]
     return accuracy
