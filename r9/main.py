@@ -5,6 +5,16 @@ from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 import numpy as np
 
+
+### simple fully-connected NN
+
+### CNN
+
+### simple RNN
+
+### LSTM
+
+
 def get_data(draw=False):
     X, y = make_circles(100, factor=.1, noise=.1, random_state=42)
     pos_idx = np.where(y == 1)
