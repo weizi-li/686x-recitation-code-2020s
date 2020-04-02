@@ -60,12 +60,11 @@ def prepare_dataset(look_back=1):
 def run_lstm():
     # fix random seed for reproducibility
     numpy.random.seed(42)
-    look_back = 1
     x_train, y_train, x_test, y_test, dataset, scaler = prepare_dataset()
 
     # create and fit the LSTM network
     model = Sequential()
-    model.add(LSTM(100, input_shape=(1, look_back)))
+    model.add(LSTM(100, input_shape=(1, 1)))
     model.add(Dense(1))
     model.compile(loss='mean_squared_error', optimizer='adam')
     model.fit(x_train, y_train, epochs=100, batch_size=1, verbose=2)
@@ -93,7 +92,7 @@ def run_lstm():
 #########################
 #########################
 def save_my_model(model):
-    # serialize model to JSON
+    # serialize model to JSON (YAML)
     model_json = model.to_json()
     with open("model.json", "w") as json_file:
         json_file.write(model_json)
@@ -105,7 +104,7 @@ def save_my_model(model):
 
 def new_model(x_train, y_train, x_test, y_test, input_shape, batch_size, num_classes, epochs):
 
-    model = Sequential()
+    model = Sequential() # option: functional
     model.add(Conv2D(32, kernel_size=(3, 3),
                      activation='relu',
                      input_shape=input_shape))
@@ -116,7 +115,7 @@ def new_model(x_train, y_train, x_test, y_test, input_shape, batch_size, num_cla
     model.add(Flatten())
 
     model.add(Dense(128, activation='relu'))
-    model.add(Dropout(0.5))
+    model.add(Dropout(0.25))
     model.add(Dense(num_classes, activation='softmax'))
 
     model.compile(loss=keras.losses.categorical_crossentropy,
@@ -156,10 +155,10 @@ def existing_model(x_test, y_test):
 def run_cnn():
     ### load the data
     (x_train, y_train), (x_test, y_test) = mnist.load_data()
-    # print(x_train.shape)
-    # print(x_test.shape)
-    # print(y_train.shape)
-    # print(y_test.shape)
+    print(x_train.shape)
+    print(x_test.shape)
+    print(y_train.shape)
+    print(y_test.shape)
 
     ### initialization
     batch_size = 128
@@ -184,15 +183,15 @@ def run_cnn():
     x_test = x_test.astype('float32')
     x_train /= 255
     x_test /= 255
-    # print('x_train shape:', x_train.shape)
-    # print(x_train.shape[0], 'train samples')
-    # print(x_test.shape[0], 'test samples')
+    print('x_train shape:', x_train.shape)
+    print(x_train.shape[0], 'train samples')
+    print(x_test.shape[0], 'test samples')
 
     ### convert class vectors to binary class matrices
     y_train = keras.utils.to_categorical(y_train, num_classes)
     y_test = keras.utils.to_categorical(y_test, num_classes)
-    # print(y_train.shape)
-    # print(y_test.shape)
+    print(y_train.shape)
+    print(y_test.shape)
 
     ### design a new model and train it
     #new_model(x_train, y_train, x_test, y_test, input_shape, batch_size, num_classes, epochs)
