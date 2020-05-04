@@ -17,11 +17,10 @@ def plot_results(solvers, solver_names):
 
     b = solvers[0].bandit
 
-    fig = plt.figure(figsize=(10, 4))
+    fig = plt.figure()
     fig.subplots_adjust(bottom=0.3, wspace=0.3)
 
-    ax1 = fig.add_subplot(121)
-    ax2 = fig.add_subplot(122)
+    ax1 = fig.add_subplot()
 
     # Sub.fig. 1: Regrets in time.
     for i, s in enumerate(solvers):
@@ -31,15 +30,6 @@ def plot_results(solvers, solver_names):
     ax1.set_ylabel('Cumulative regret')
     ax1.legend(loc=9, bbox_to_anchor=(1.82, -0.25), ncol=5)
     ax1.grid('k', ls='--', alpha=0.3)
-
-    # Sub.fig. 2: Action counts
-    print("Action attempted count:")
-    print(np.array(s.counts))
-    for s in solvers:
-        ax2.hist(np.array(s.counts), range(b.n))
-    ax2.set_xlabel('Actions')
-    ax2.set_ylabel('Frac. # trials')
-    ax2.grid('k', ls='--', alpha=0.3)
 
     plt.show()
 
