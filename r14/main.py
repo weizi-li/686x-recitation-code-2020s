@@ -28,7 +28,7 @@ ob_bounds[1] = [-0.5, 0.5]  # changed from inf for velocity
 ob_bounds[3] = [-math.radians(50), math.radians(50)]  # changed from inf for angular velocity
 
 # hyperparameters, can be optimized using grid search
-min_explore_rate = 0.01
+min_explore_rate = 0.01  # explore at least this amount
 min_learning_rate = 0.1
 discount = 0.99
 
